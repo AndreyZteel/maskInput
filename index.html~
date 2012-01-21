@@ -6,15 +6,6 @@
   <title>Mavrin/maskInput @ GitHub</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
   <script src="jquery.numberMask.js"></script>
-  <script type="text/javascript">
-			$(function(){
-				$('#int').numberMask({beforePoint:2});
-				$('#float').numberMask({type:'float',afterPoint:4,defaultValueInput:'10,1',decimalMark:','});
-				$('#float2').numberMask({type:'float',afterPoint:4,defaultValueInput:'10.1',decimalMark:'.'});
-				$('#word').numberMask({pattern:/^[f]{0,3}$/});
-				$('form').submit(function(){alert('Form submit'); return false;})
-			})
-		</script>
   <style type="text/css">
     body {
       margin-top: 1.0em;
