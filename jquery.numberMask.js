@@ -22,7 +22,12 @@
 					    if(selectionParam.statusSelection) {
 							value = value.substring(0,selectionParam.start) + c + value.substring(selectionParam.end);
 						} else {
-							value += c;
+							// Раньше новый символ добавлялся в конец строки и была проблема, что
+			                                // если указывать число до десятичного разделителя и после него уже вся длинна заполнена,
+			                                // то перед точкой значение не ставилось, хотя оно соответствовало маске
+			                                var startVal = value.substring(0, selectionParam.start) + c;
+			                                var endVal = value.substring(selectionParam.start);
+			                                value = startVal + "" + endVal;
 						}
 						
 						if((typeof settings.pattern == "object") && (settings.pattern instanceof RegExp)) {
